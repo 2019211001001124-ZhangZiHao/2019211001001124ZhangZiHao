@@ -8,6 +8,20 @@
 <h1><%= "Hello World!...." %>
 </h1>
 <br/>
-<a href="hello-servlet">Hello Servlet(U-_-U)</a>
+<ul>
+    <li>
+        <a href="homework2/java">Hello Servlet(U-_-U)</a>
+    </li>
+
+    <li>
+        <a href="./homework2/register.jsp">Hello Servlet(U-_-U)</a>
+    </li>
+
+    <li>
+        <a href="homework2/java">Hello Servlet(U-_-U)</a>
+    </li>
+</ul>
+
+
 </body>
 </html>
