@@ -1,28 +1,25 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
-<head>
-    <title>JSP - Hello World?</title>
-</head>
-<body>
-<h1><%= "Hello World!...." %>
-</h1>
-<br/>
-<ul>
-    <li>
-        <a href="homework2/java">Hello Servlet(U-_-U)</a>
-    </li>
+    <head>
+        <title>JSP - Hello World?</title>
+    </head>
+    <body>
+        <h1>
+            <%= "Hello World!...." %>
+        </h1>
 
-    <li>
-        <a href="./homework2/register.jsp">Hello Servlet(U-_-U)</a>
-    </li>
+        <br/>
 
-    <li>
-        <a href="homework2/java">Hello Servlet(U-_-U)</a>
+        <ul>
+            <li>
+                <a href="homework2/java">To test(U-_-U)</a>
+            </li>
 
-    </li>
-</ul>
+            <li>
+                <a href="./homework2/register.jsp">To register(U-_-U)</a>
+            </li>
+        </ul>
 
-
-</body>
+    </body>
 </html>

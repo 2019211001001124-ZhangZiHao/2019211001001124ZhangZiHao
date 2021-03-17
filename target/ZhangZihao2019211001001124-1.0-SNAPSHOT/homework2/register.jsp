@@ -56,7 +56,7 @@
             </div>
             <div id="Date">
                 <pre>Birthday: </pre>
-                <input type="text" required placeholder="yyyy-dd-mm" pattern="\d{4}-((\d)|(1\d)|(2\d)|(3[0-2]))-(\d|(1[0-2]))"/>
+                <input type="text" required placeholder="yyyy-dd-mm" pattern="\d{4}-((0[1-9]])|(1\d)|(2\d)|(3[0-1]))-(0[1-9]|(1[0-2]))"/>
             </div>
             <div id="submit">
                 <input type="submit" value="register now!"/>
