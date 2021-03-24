@@ -36,27 +36,27 @@
 <body>
     <div id="main">
         <div style="float: left;width: calc(50% - 120px);height: 100%"></div>
-        <form method="post">
+        <form method="post" action="../registerServlet" >
             <div id="name">
                 <pre>Name:     </pre>
-                <input type="text" required placeholder="No more than 30" pattern=".{0,30}"/>
+                <input name="name" type="text" required placeholder="No more than 30s" pattern=".{0,30}"/>
             </div>
             <div id="password">
                 <pre>password: </pre>
-                <input type="password" required placeholder="No less than 8 , No more than 30" pattern=".{8,16}"/>
+                <input name="password" type="password" required placeholder="No less than 8 , No more than 30" pattern=".{8,16}"/>
             </div>
             <div id="email">
                 <pre>email:    </pre>
-                <input type="text" required placeholder="QQmail/foxmail/Gmail..."/>
+                <input name="email" type="text" required placeholder="QQmail/foxmail/Gmail..." pattern=".{1,}@.{1,}"/>
             </div>
             <div id="sex">
-                Boy:      <input name="sex" class="nom" type="radio" checked/>
+                Boy:      <input name="sex" class="nom" type="radio" value="boy" checked/>
                 &ensp; 	&ensp; 	&ensp; 	&ensp;
-                Girl:     <input name="sex" class="nom" type="radio"/>
+                Girl:     <input name="sex" class="nom" type="radio" value="girl"/>
             </div>
             <div id="Date">
                 <pre>Birthday: </pre>
-                <input type="text" required placeholder="yyyy-dd-mm" pattern="\d{4}-((0[1-9]])|(1\d)|(2\d)|(3[0-1]))-(0[1-9]|(1[0-2]))"/>
+                <input name="birthday" type="text" required placeholder="yyyy-dd-mm" pattern="\d{4}-((0[1-9])|(1\d)|(2\d)|(3[0-1]))-((0[1-9])|(1[0-2]))"/>
             </div>
             <div id="submit">
                 <input type="submit" value="register now!"/>

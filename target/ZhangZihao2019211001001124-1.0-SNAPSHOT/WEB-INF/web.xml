@@ -5,10 +5,27 @@
          version="4.0">
     <servlet>
         <servlet-name>homework2java</servlet-name>
-        <servlet-class>com.ZhangZihao.homework2.test</servlet-class>
+        <servlet-class>com.ZhangZihao.homework.week2.tryGET</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>registerServlet</servlet-name>
+        <servlet-class>com.ZhangZihao.homework.week3.registerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LifeCycle</servlet-name>
+        <servlet-class>com.ZhangZihao.homework.week3.ServletLifeCycle</servlet-class>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>homework2java</servlet-name>
         <url-pattern>/homework2/java</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>registerServlet</servlet-name>
+        <url-pattern>/registerServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LifeCycle</servlet-name>
+        <url-pattern>/homework3/ServletLifeCycle</url-pattern>
     </servlet-mapping>
 </web-app>

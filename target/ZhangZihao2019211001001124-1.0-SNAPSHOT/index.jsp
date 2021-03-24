@@ -13,11 +13,15 @@
 
         <ul>
             <li>
-                <a href="homework2/java">To test(U-_-U)</a>
+                <a href="registerServlet">To test(U-_-U)</a>
             </li>
 
             <li>
                 <a href="./homework2/register.jsp">To register(U-_-U)</a>
+            </li>
+
+            <li>
+                <a href="homework3/ServletLifeCycle">To LifeCycle(U-_-U)</a>
             </li>
         </ul>
 
