@@ -1,4 +1,4 @@
-package com.ZhangZihao.homework.week3;
+package com.ZhangZihao.homework.week4.conn;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -52,4 +52,5 @@ public class Conn {
             e.printStackTrace();
         }
     }
+
 }
