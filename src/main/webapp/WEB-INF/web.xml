@@ -7,25 +7,70 @@
         <servlet-name>homework2java</servlet-name>
         <servlet-class>com.ZhangZihao.homework.week2.tryGET</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>registerServlet</servlet-name>
-        <servlet-class>com.ZhangZihao.homework.week3.registerServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>LifeCycle</servlet-name>
-        <servlet-class>com.ZhangZihao.homework.week3.ServletLifeCycle</servlet-class>
-    </servlet>
-
     <servlet-mapping>
         <servlet-name>homework2java</servlet-name>
         <url-pattern>/homework2/java</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>registerServlet</servlet-name>
+        <servlet-class>com.ZhangZihao.homework.week3.registerServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>registerServlet</servlet-name>
         <url-pattern>/registerServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LifeCycle</servlet-name>
+        <servlet-class>com.ZhangZihao.homework.week3.ServletLifeCycle</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LifeCycle</servlet-name>
         <url-pattern>/homework3/ServletLifeCycle</url-pattern>
     </servlet-mapping>
+
+<!--    <servlet>
+        <servlet-name>jdbcServer</servlet-name>
+        <servlet-class>com.ZhangZihao.homework.week4.registerServlet</servlet-class>
+            <init-param>
+                <param-name>driver</param-name>
+                <param-value>com.microsoft.sqlserver.jdbc.SQLServerDriver</param-value>
+            </init-param>
+            <init-param>
+                <param-name>address</param-name>
+                <param-value>jdbc:sqlserver://localhost:1314;DatabaseName=userdb</param-value>
+            </init-param>
+            <init-param>
+                <param-name>User</param-name>
+                <param-value>ZZH</param-value>
+            </init-param>
+            <init-param>
+                <param-name>password</param-name>
+                <param-value>zzh</param-value>
+            </init-param>
+&lt;!&ndash;        <load-on-startup>1</load-on-startup>&ndash;&gt;
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>jdbcServer</servlet-name>
+        <url-pattern>/ToMyDb</url-pattern>
+    </servlet-mapping>-->
+
+    <!--<servlet>
+        <servlet-name>ConfigServlet</servlet-name>
+        <servlet-class>com.ZhangZihao.homework.week4.ConfigServlet</servlet-class>
+        <init-param>
+            <param-name>Name</param-name>
+            <param-value>ZhangZihao</param-value>
+        </init-param>
+        <init-param>
+            <param-name>StudentId</param-name>
+            <param-value>2019211001001124</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ConfigServlet</servlet-name>
+        <url-pattern>/config</url-pattern>
+    </servlet-mapping>-->
+
 </web-app>
