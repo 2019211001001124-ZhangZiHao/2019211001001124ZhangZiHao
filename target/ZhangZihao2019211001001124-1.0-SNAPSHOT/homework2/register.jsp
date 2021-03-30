@@ -36,7 +36,7 @@
 <body>
     <div id="main">
         <div style="float: left;width: calc(50% - 120px);height: 100%"></div>
-        <form method="post" action="../registerServlet" >
+        <form method="post" action="${pageContext.request.contextPath}/ToMyDb" >
             <div id="name">
                 <pre>Name:     </pre>
                 <input name="name" type="text" required placeholder="No more than 30s" pattern=".{0,30}"/>
