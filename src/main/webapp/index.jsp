@@ -2,22 +2,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>JSP - Hello World?</title>
-    </head>
-    <body>
-        <h1>
-            <%= "Hello World!...." %>
-        </h1>
+<jsp:include page="/homework5/header.jsp"/>
 
         <br/>
 
         <ul>
             <li>
-                <a href="registerServlet">To test(U-_-U)</a>
-            </li>
-
-            <li>
-                <a href="./homework2/register.jsp">To register(U-_-U)</a>
+                <a href="LoginServlet">To test(U-_-U)</a>
             </li>
 
             <li>
@@ -29,9 +20,12 @@
             </li>
 
             <li>
+                <a href="./homework5/MyJsp.jsp">To MyJsp(U-_-U)</a>
+            </li>
+
+            <li>
                 <a href="./homework5/login.jsp">To login(U-_-U)</a>
             </li>
         </ul>
 
-    </body>
-</html>
+<jsp:include page="/homework5/footer.jsp"/>

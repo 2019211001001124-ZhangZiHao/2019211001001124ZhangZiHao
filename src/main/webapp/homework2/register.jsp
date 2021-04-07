@@ -8,7 +8,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
     <style>
         pre{
             display: inline;
@@ -32,8 +31,7 @@
             width: auto;
         }
     </style>
-</head>
-<body>
+    <jsp:include page="/homework5/header.jsp"/>
     <div id="main">
         <div style="float: left;width: calc(50% - 120px);height: 20%"></div>
         <form method="post" action="${pageContext.request.contextPath}/ToMyDb" >
@@ -63,6 +61,4 @@
             </div>
         </form>
     </div>
-
-</body>
-</html>
+    <jsp:include page="/homework5/footer.jsp"/>
