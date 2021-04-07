@@ -48,6 +48,7 @@ public class registerServlet extends HttpServlet {
     @Override
     public void init() throws ServletException{
         super.init();
+
         con = new Conn();
         insertWay = new UserTableInsert(con);
         selectWay = new UserTableSelect(con);
@@ -76,7 +77,9 @@ public class registerServlet extends HttpServlet {
         usertable tableS = new usertable();
         tableS.setUserName(name);
         tableS.setPassword(password);
+        selectWay.SelectInDb(tableS);
         selectWay.fillTable(tableS);
+        selectWay.SelectClear();
 
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
@@ -84,9 +87,7 @@ public class registerServlet extends HttpServlet {
         out.println("" +
                 "<html>\n" +
                 "<head>\n" +
-                "    <title>Title</title>\n" +
-                "</head>\n" +
-                "<body>\n" +
+                "<jsp:include page=\"/homework5/header.jsp\"/>" +
                 "<table frame=\"box\" rules=\"all\">\n" +
                 "    <th>ID</th>\n" +
                 "    <th>UserName</th>\n" +
@@ -115,8 +116,7 @@ public class registerServlet extends HttpServlet {
                 "        </td>\n" +
                 "    </tr>\n" +
                 "</table>\n" +
-                "</body>\n" +
-                "</html>\n");
+                "<jsp:include page=\"/homework5/footer.jsp\"/>");
     }
 
     public void destroy(){

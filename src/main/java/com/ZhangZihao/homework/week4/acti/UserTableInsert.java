@@ -36,8 +36,7 @@ public class UserTableInsert {
         }
     }
 
-
-    void destroy(){
+    public void close(){
         System.out.println("bye");
         con.close();
     }

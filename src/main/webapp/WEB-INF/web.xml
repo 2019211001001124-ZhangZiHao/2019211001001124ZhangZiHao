@@ -3,6 +3,24 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+    
+    <context-param>
+        <param-name>drive</param-name>
+        <param-value>com.microsoft.sqlserver.jdbc.SQLServerDriver</param-value>
+    </context-param>
+    <context-param>
+        <param-name>url</param-name>
+        <param-value>jdbc:sqlserver://localhost:1314;DatabaseName=userdb</param-value>
+    </context-param>
+    <context-param>
+        <param-name>User</param-name>
+        <param-value>ZZH</param-value>
+    </context-param>
+    <context-param>
+        <param-name>Password</param-name>
+        <param-value>zzh</param-value>
+    </context-param>
+    
     <servlet>
         <servlet-name>homework2java</servlet-name>
         <servlet-class>com.ZhangZihao.homework.week2.tryGET</servlet-class>
@@ -29,6 +47,15 @@
         <servlet-name>LifeCycle</servlet-name>
         <url-pattern>/homework3/ServletLifeCycle</url-pattern>
     </servlet-mapping>
+    
+<!--    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.ZhangZihao.homework.week5</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>-->
 
 <!--    <servlet>
         <servlet-name>jdbcServer</servlet-name>

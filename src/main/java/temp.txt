@@ -1,50 +1,19 @@
-////from eclipse item kpoj
-
-package conn;
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
-
-public class Conn {
-	Connection conn=null;
-	Statement stmt=null;
-	static{
-         // 加载驱动确认
-         try {	Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");	}    //驱动确认
-         catch (ClassNotFoundException e) {	e.printStackTrace();	}
-	}
-	public Conn(){}
-	public Conn(String address,String User,String password){
-		connection(address,User,password);
-	}
-	void connection(String address,String User,String password)
-	{
-		try {
-			conn=DriverManager.getConnection("jdbc:sqlserver://localhost:1314;DatabaseName=Book_Reader_DB20200130","ZZH","zzh");
-			stmt=conn.createStatement();//创建sql响应对象
-		}catch(SQLException e){
-			e.printStackTrace();
-			this.close();
-		}
-	}
-
-	public Statement getStatement() {
-		return stmt;
-	}
-
-	public void close()
-	{
-		try
-		{
-			if(stmt!=null)
-				stmt.close();
-			if(conn!=null)
-				conn.close();
-		}
-		catch(SQLException e){
-			e.printStackTrace();
-		}
-	}
-}
+@WebServlet(
+        name = "ServletR",
+        value = "/ToMyDb",
+//        urlPatterns = "/ToMyDb",
+        initParams = {
+                @WebInitParam(
+                        name = "address",
+                        value = "jdbc:sqlserver://localhost:1314;DatabaseName=userdb"
+                ),
+                @WebInitParam(
+                        name = "User",
+                        value = "ZZH"
+                ),
+                @WebInitParam(
+                        name = "password",
+                        value = "zzh"
+                )
+        }
+        )

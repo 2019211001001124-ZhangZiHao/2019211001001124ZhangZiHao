@@ -52,7 +52,6 @@ public class UserTableSelect {
     }
     public void resultSQL(usertable table,PrintWriter out) throws SQLException
     {
-
         rs=doSelect(table);
         assert rs != null;
         rsmd=rs.getMetaData();
@@ -68,12 +67,14 @@ public class UserTableSelect {
             out.println();
         }
     }
-    public void fillTable(usertable table)//仅考虑结果唯一
-    {
+    public void SelectInDb(usertable table){
         rs=doSelect(table);
-        assert rs != null;
+    }
+    public boolean fillTable(usertable table)//仅考虑结果唯一
+    {
         try {
-            rs.next();
+            if(!rs.next())
+                return false;
             table.setID(rs.getString("ID"));
             table.setUserName(rs.getString("UserName"));
             table.setPassword(rs.getString("Password"));
@@ -83,9 +84,13 @@ public class UserTableSelect {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+        return true;
+    }
+    public void SelectClear(){
+        rs=null;
     }
 
-    void destroy(){
+    public void close(){
         System.out.println("bye");
         con.close();
     }
