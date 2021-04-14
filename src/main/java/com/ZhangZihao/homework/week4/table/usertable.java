@@ -2,42 +2,41 @@ package com.ZhangZihao.homework.week4.table;
 
 import com.ZhangZihao.homework.week4.acti.toSQLs;
 
-import javax.lang.model.element.Name;
 import java.sql.Date;
 
 public class usertable {
 
     String  ID          = null;
     String  UserName    = null;
-    String  password    = null;
-    String  email       = null;
+    String  Password    = null;
+    String  Email       = null;
     String  Gender      = null;
     Date    Birthdate   = null;
 
     public usertable(String ID, String UserName, String password, String email, String Gender, String Birthdate){
         this.ID = ID;
         this.UserName = UserName;
-        this.password = password;
-        this.email = email;
+        this.Password = password;
+        this.Email = email;
         this.Gender = Gender;
         this.Birthdate = Date.valueOf(Birthdate);
     }
     public usertable(String UserName, String password, String email, String Gender, String Birthdate){
         this.UserName = UserName;
-        this.password = password;
-        this.email = email;
+        this.Password = password;
+        this.Email = email;
         this.Gender = Gender;
         this.Birthdate = Date.valueOf(Birthdate);
     }
     public usertable(String UserName, String password, String Gender){
         this.UserName = UserName;
-        this.password = password;
+        this.Password = password;
         this.Gender = Gender;
     }
     public usertable(String UserName,String password){
 
         this.UserName = UserName;
-        this.password = password;
+        this.Password = password;
     }
     public usertable(String ID){
         this.ID = ID;
@@ -46,7 +45,7 @@ public class usertable {
 
     @Override
     public String toString(){
-        return ID+"    "+UserName+"    "+password+"    "+Gender+"    "+Birthdate;
+        return ID+"    "+UserName+"    "+ Password +"    "+Gender+"    "+Birthdate;
     }
 //--------------------
     public String getID() {
@@ -56,10 +55,10 @@ public class usertable {
         return toSQLs.SQLs(UserName);
     }
     public String getPassword() {
-        return toSQLs.SQLs(password);
+        return toSQLs.SQLs(Password);
     }
     public String getEmail() {
-        return toSQLs.SQLs(email);
+        return toSQLs.SQLs(Email);
     }
     public String getGender() {
         return toSQLs.SQLs(Gender);
@@ -77,10 +76,10 @@ public class usertable {
         UserName = userName;
     }
     public void setPassword(String password) {
-        this.password = password;
+        this.Password = password;
     }
     public void setEmail(String email) {
-        this.email = email;
+        this.Email = email;
     }
     public void setGender(String gender) {
         Gender = gender;

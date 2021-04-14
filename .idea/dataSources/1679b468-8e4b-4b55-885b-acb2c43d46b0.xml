@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="userdb@localhost">
+  <database-model serializer="dbm" dbms="MSSQL" family-id="MSSQL" format-version="4.20">
+    <root id="1">
+      <ServerVersion>15.0.2000</ServerVersion>
+      <PermissionsCheckSum>9477403211</PermissionsCheckSum>
+      <Grants>0|root||1|connect sql|G
+0|root||2|view any database|G
+0|root||273|connect sql|G
+2|||2|connect|G
+3|||2|connect|G
+4|||2|connect|G
+5|||2|connect|G
+</Grants>
+    </root>
+    <database id="2" parent="1" name="Book_Reader_DB20200130">
+      <ObjectId>5</ObjectId>
+      <Collation>Chinese_PRC_CI_AS</Collation>
+    </database>
+    <database id="3" parent="1" name="master">
+      <ObjectId>1</ObjectId>
+      <Collation>Chinese_PRC_CI_AS</Collation>
+    </database>
+    <database id="4" parent="1" name="model">
+      <ObjectId>3</ObjectId>
+      <Collation>Chinese_PRC_CI_AS</Collation>
+    </database>
+    <database id="5" parent="1" name="msdb">
+      <ObjectId>4</ObjectId>
+      <Collation>Chinese_PRC_CI_AS</Collation>
+    </database>
+    <database id="6" parent="1" name="tempdb">
+      <ObjectId>2</ObjectId>
+      <Collation>Chinese_PRC_CI_AS</Collation>
+    </database>
+    <database id="7" parent="1" name="userdb">
+      <ObjectId>6</ObjectId>
+      <PermissionsCheckSum>4255254626</PermissionsCheckSum>
+      <Grants>6|database||0|view any column encryption key definition|G
+6|database||0|view any column master key definition|G
+6|database||1|connect|G
+6|database||5|connect|G
+</Grants>
+      <Current>1</Current>
+      <Collation>Chinese_PRC_CI_AS</Collation>
+      <Fingerprint>6.44277/A0CFC474-C139-4829-9377-9A32D1228A90@JORK</Fingerprint>
+    </database>
+    <login id="8" parent="1" name="sa">
+      <ObjectId>1</ObjectId>
+      <DefaultDatabase>master</DefaultDatabase>
+    </login>
+    <login id="9" parent="1" name="public">
+      <ObjectId>2</ObjectId>
+      <Type>server-role</Type>
+      <Enabled>1</Enabled>
+    </login>
+    <login id="10" parent="1" name="sysadmin">
+      <ObjectId>3</ObjectId>
+      <Type>server-role</Type>
+      <Enabled>1</Enabled>
+    </login>
+    <login id="11" parent="1" name="securityadmin">
+      <ObjectId>4</ObjectId>
+      <Type>server-role</Type>
+      <Enabled>1</Enabled>
+    </login>
+    <login id="12" parent="1" name="serveradmin">
+      <ObjectId>5</ObjectId>
+      <Type>server-role</Type>
+      <Enabled>1</Enabled>
+    </login>
+    <login id="13" parent="1" name="setupadmin">
+      <ObjectId>6</ObjectId>
+      <Type>server-role</Type>
+      <Enabled>1</Enabled>
+    </login>
+    <login id="14" parent="1" name="processadmin">
+      <ObjectId>7</ObjectId>
+      <Type>server-role</Type>
+      <Enabled>1</Enabled>
+    </login>
+    <login id="15" parent="1" name="diskadmin">
+      <ObjectId>8</ObjectId>
+      <Type>server-role</Type>
+      <Enabled>1</Enabled>
+    </login>
+    <login id="16" parent="1" name="dbcreator">
+      <ObjectId>9</ObjectId>
+      <Type>server-role</Type>
+      <Enabled>1</Enabled>
+    </login>
+    <login id="17" parent="1" name="bulkadmin">
+      <ObjectId>10</ObjectId>
+      <Type>server-role</Type>
+      <Enabled>1</Enabled>
+    </login>
+    <login id="18" parent="1" name="ZZH">
+      <ObjectId>273</ObjectId>
+      <Enabled>1</Enabled>
+      <DefaultDatabase>master</DefaultDatabase>
+    </login>
+    <schema id="19" parent="7" name="INFORMATION_SCHEMA">
+      <ObjectId>3</ObjectId>
+    </schema>
+    <schema id="20" parent="7" name="db_accessadmin">
+      <ObjectId>16385</ObjectId>
+    </schema>
+    <schema id="21" parent="7" name="db_backupoperator">
+      <ObjectId>16389</ObjectId>
+    </schema>
+    <schema id="22" parent="7" name="db_datareader">
+      <ObjectId>16390</ObjectId>
+    </schema>
+    <schema id="23" parent="7" name="db_datawriter">
+      <ObjectId>16391</ObjectId>
+    </schema>
+    <schema id="24" parent="7" name="db_ddladmin">
+      <ObjectId>16387</ObjectId>
+    </schema>
+    <schema id="25" parent="7" name="db_denydatareader">
+      <ObjectId>16392</ObjectId>
+    </schema>
+    <schema id="26" parent="7" name="db_denydatawriter">
+      <ObjectId>16393</ObjectId>
+    </schema>
+    <schema id="27" parent="7" name="db_owner">
+      <ObjectId>16384</ObjectId>
+      <IntrospectionTimestamp>2021-03-30.06:07:18.240</IntrospectionTimestamp>
+    </schema>
+    <schema id="28" parent="7" name="db_securityadmin">
+      <ObjectId>16386</ObjectId>
+    </schema>
+    <schema id="29" parent="7" name="dbo">
+      <ObjectId>1</ObjectId>
+      <IntrospectionTimestamp>2021-03-31.00:42:32.797</IntrospectionTimestamp>
+      <Current>1</Current>
+    </schema>
+    <schema id="30" parent="7" name="guest">
+      <ObjectId>2</ObjectId>
+    </schema>
+    <schema id="31" parent="7" name="sys">
+      <ObjectId>4</ObjectId>
+    </schema>
+    <role id="32" parent="7" name="public">
+      <ObjectId>0</ObjectId>
+      <OwnerId>1</OwnerId>
+      <Type>database-role</Type>
+      <AuthType>none</AuthType>
+    </role>
+    <role id="33" parent="7" name="dbo">
+      <ObjectId>1</ObjectId>
+      <Type>windows-user</Type>
+      <DefaultSchema>dbo</DefaultSchema>
+      <AuthType>windows</AuthType>
+    </role>
+    <role id="34" parent="7" name="guest">
+      <ObjectId>2</ObjectId>
+      <DefaultSchema>guest</DefaultSchema>
+      <AuthType>none</AuthType>
+    </role>
+    <role id="35" parent="7" name="INFORMATION_SCHEMA">
+      <ObjectId>3</ObjectId>
+      <AuthType>none</AuthType>
+    </role>
+    <role id="36" parent="7" name="sys">
+      <ObjectId>4</ObjectId>
+      <AuthType>none</AuthType>
+    </role>
+    <role id="37" parent="7" name="ZZH">
+      <ObjectId>5</ObjectId>
+      <DefaultSchema>dbo</DefaultSchema>
+      <AuthType>instance</AuthType>
+    </role>
+    <role id="38" parent="7" name="db_owner">
+      <ObjectId>16384</ObjectId>
+      <OwnerId>1</OwnerId>
+      <Type>database-role</Type>
+      <AuthType>none</AuthType>
+    </role>
+    <role id="39" parent="7" name="db_accessadmin">
+      <ObjectId>16385</ObjectId>
+      <OwnerId>1</OwnerId>
+      <Type>database-role</Type>
+      <AuthType>none</AuthType>
+    </role>
+    <role id="40" parent="7" name="db_securityadmin">
+      <ObjectId>16386</ObjectId>
+      <OwnerId>1</OwnerId>
+      <Type>database-role</Type>
+      <AuthType>none</AuthType>
+    </role>
+    <role id="41" parent="7" name="db_ddladmin">
+      <ObjectId>16387</ObjectId>
+      <OwnerId>1</OwnerId>
+      <Type>database-role</Type>
+      <AuthType>none</AuthType>
+    </role>
+    <role id="42" parent="7" name="db_backupoperator">
+      <ObjectId>16389</ObjectId>
+      <OwnerId>1</OwnerId>
+      <Type>database-role</Type>
+      <AuthType>none</AuthType>
+    </role>
+    <role id="43" parent="7" name="db_datareader">
+      <ObjectId>16390</ObjectId>
+      <OwnerId>1</OwnerId>
+      <Type>database-role</Type>
+      <AuthType>none</AuthType>
+    </role>
+    <role id="44" parent="7" name="db_datawriter">
+      <ObjectId>16391</ObjectId>
+      <OwnerId>1</OwnerId>
+      <Type>database-role</Type>
+      <AuthType>none</AuthType>
+    </role>
+    <role id="45" parent="7" name="db_denydatareader">
+      <ObjectId>16392</ObjectId>
+      <OwnerId>1</OwnerId>
+      <Type>database-role</Type>
+      <AuthType>none</AuthType>
+    </role>
+    <role id="46" parent="7" name="db_denydatawriter">
+      <ObjectId>16393</ObjectId>
+      <OwnerId>1</OwnerId>
+      <Type>database-role</Type>
+      <AuthType>none</AuthType>
+    </role>
+    <table id="47" parent="29" name="usertable">
+      <ObjectId>901578250</ObjectId>
+      <CreatedTimestamp>2021-03-30.06:10:38.147</CreatedTimestamp>
+      <ModifiedTimestamp>2021-03-31.00:25:44.090</ModifiedTimestamp>
+    </table>
+    <column id="48" parent="47" name="UserName">
+      <Position>2</Position>
+      <DataType>char(20 char)|0s</DataType>
+    </column>
+    <column id="49" parent="47" name="Password">
+      <Position>3</Position>
+      <DataType>char(20 char)|0s</DataType>
+    </column>
+    <column id="50" parent="47" name="Email">
+      <Position>4</Position>
+      <DataType>char(20 char)|0s</DataType>
+    </column>
+    <column id="51" parent="47" name="Gender">
+      <Position>5</Position>
+      <DataType>char(20 char)|0s</DataType>
+    </column>
+    <column id="52" parent="47" name="Birthdate">
+      <Position>6</Position>
+      <DataType>date|0s</DataType>
+    </column>
+    <column id="53" parent="47" name="ID">
+      <Position>7</Position>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="54" parent="47" name="usertable_ix_uindex">
+      <Position>3</Position>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+  </database-model>
+</dataSource>
