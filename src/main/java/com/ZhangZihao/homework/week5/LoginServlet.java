@@ -23,20 +23,13 @@ public class LoginServlet extends HttpServlet {
     @Override
     public void init() throws ServletException{
         super.init();
-        String dirver = getServletContext().getInitParameter("dirver");
-        String url = getServletContext().getInitParameter("url");
-        String User = getServletContext().getInitParameter("User");
-        String Password = getServletContext().getInitParameter("Password");
-
-        con = new Conn(url,User,Password);
-        selectWay = new UserTableSelect(con);
+        con=(Conn) getServletContext().getAttribute("con");
+        selectWay=(UserTableSelect) getServletContext().getAttribute("selectWay");
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
-        out.println("?,error access mode ");
+        doPost(request,response);
     }
 
     @Override
@@ -56,17 +49,27 @@ public class LoginServlet extends HttpServlet {
         out.println("<h1>");
         if(selectWay.fillTable(table))
         {
-            out.println("Login Success!!!"+"<br/>"+
+            /*out.println("Login Success!!!"+"<br/>"+
                     "Welcome!!!"+"<br/>"+
-                    "ID"+table.getID()+':'+table.getUserName());
+                    "ID"+table.getID()+':'+table.getUserName());*/
+            request.setAttribute("ID",table.getID());
+            request.setAttribute("UserName",table.getUserName());
+            request.setAttribute("Password",table.getPassword());
+            request.setAttribute("Email",table.getEmail());
+            request.setAttribute("Gender",table.getGender());
+            request.setAttribute("Birthdate",table.getBirthdate());
+
+            request.getRequestDispatcher("./homework6/userInfo.jsp").forward(request,response);
         }
         else
         {
-            out.println("Username or Password Error!!!");
+//            out.println("Username or Password Error!!!");
+            request.setAttribute("message","Username or Password Error!!!");
+            request.getRequestDispatcher("./homework5/login.jsp").forward(request,response);
         }
+        /*
         out.println("</h1>");
 
-        out.println("<jsp:include page=\"/homework5/footer.jsp\"/>");
-        selectWay.SelectClear();
+        out.println("<jsp:include page=\"/homework5/footer.jsp\"/>");*/
     }
 }

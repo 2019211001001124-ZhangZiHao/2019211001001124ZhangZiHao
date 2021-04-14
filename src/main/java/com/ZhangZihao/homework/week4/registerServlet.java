@@ -48,19 +48,15 @@ public class registerServlet extends HttpServlet {
     @Override
     public void init() throws ServletException{
         super.init();
-
-        con = new Conn();
-        insertWay = new UserTableInsert(con);
-        selectWay = new UserTableSelect(con);
+        con=(Conn) getServletContext().getAttribute("con");
+        selectWay=(UserTableSelect) getServletContext().getAttribute("selectWay");
+        insertWay=(UserTableInsert) getServletContext().getAttribute("insertWay");
 
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
-        out.println("?,error access mode ");
+        doPost(request,response);
     }
 
     @Override
@@ -74,7 +70,9 @@ public class registerServlet extends HttpServlet {
         usertable tableI = new usertable(name,password,email,Gender,birthday);
         insertWay.doInsert(tableI);
 
-        usertable tableS = new usertable();
+        response.sendRedirect("./homework5/login.jsp");
+
+        /*usertable tableS = new usertable();
         tableS.setUserName(name);
         tableS.setPassword(password);
         selectWay.SelectInDb(tableS);
@@ -116,11 +114,10 @@ public class registerServlet extends HttpServlet {
                 "        </td>\n" +
                 "    </tr>\n" +
                 "</table>\n" +
-                "<jsp:include page=\"/homework5/footer.jsp\"/>");
+                "<jsp:include page=\"/homework5/footer.jsp\"/>");*/
     }
 
-    public void destroy(){
+/*    public void destroy(){
         super.destroy();
-        con.close();
-    }
+    }*/
 }
