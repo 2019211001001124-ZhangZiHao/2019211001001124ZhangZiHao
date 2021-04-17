@@ -5,7 +5,7 @@
          version="4.0">
 
     <listener>
-        <listener-class>com.ZhangZihao.homework.week6.JDBCServletContextListener</listener-class>
+        <listener-class>com.ZhangZihao.week6.JDBCServletContextListener</listener-class>
     </listener>
 
     <context-param>
@@ -27,34 +27,39 @@
     
     <servlet>
         <servlet-name>homework2java</servlet-name>
-        <servlet-class>com.ZhangZihao.homework.week2.tryGET</servlet-class>
+        <servlet-class>com.ZhangZihao.week2.tryGET</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>homework2java</servlet-name>
         <url-pattern>/homework2/java</url-pattern>
     </servlet-mapping>
 
-    <servlet>
+<!--    <servlet>
         <servlet-name>registerServlet</servlet-name>
-        <servlet-class>com.ZhangZihao.homework.week3.registerServlet</servlet-class>
+        <servlet-class>com.ZhangZihao.week3.registerServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>registerServlet</servlet-name>
         <url-pattern>/registerServlet</url-pattern>
-    </servlet-mapping>
+    </servlet-mapping>-->
 
     <servlet>
         <servlet-name>LifeCycle</servlet-name>
-        <servlet-class>com.ZhangZihao.homework.week3.ServletLifeCycle</servlet-class>
+        <servlet-class>com.ZhangZihao.week3.ServletLifeCycle</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LifeCycle</servlet-name>
         <url-pattern>/homework3/ServletLifeCycle</url-pattern>
     </servlet-mapping>
     
+    <welcome-file-list>
+        <welcome-file>Home</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+    
 <!--    <servlet>
         <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>com.ZhangZihao.homework.week5</servlet-class>
+        <servlet-class>com.ZhangZihao.week5</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
@@ -63,7 +68,7 @@
 
 <!--    <servlet>
         <servlet-name>jdbcServer</servlet-name>
-        <servlet-class>com.ZhangZihao.homework.week4.registerServlet</servlet-class>
+        <servlet-class>com.ZhangZihao.week4.registerServlet</servlet-class>
             <init-param>
                 <param-name>driver</param-name>
                 <param-value>com.microsoft.sqlserver.jdbc.SQLServerDriver</param-value>
@@ -89,7 +94,7 @@
 
     <!--<servlet>
         <servlet-name>ConfigServlet</servlet-name>
-        <servlet-class>com.ZhangZihao.homework.week4.ConfigServlet</servlet-class>
+        <servlet-class>com.ZhangZihao.week4.ConfigServlet</servlet-class>
         <init-param>
             <param-name>Name</param-name>
             <param-value>ZhangZihao</param-value>

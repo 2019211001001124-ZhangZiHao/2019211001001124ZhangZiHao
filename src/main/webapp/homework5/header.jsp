@@ -20,7 +20,8 @@
                             border-style:solid;
                             border-top-width:0px;
                             border-color:black;" align="center">
-            <a style="color:white;" href="${pageContext.request.contextPath}/index.jsp">Home</a>
+            <a style="color:white;" href="${pageContext.request.contextPath}/Home">Home</a>
+<%--            <a style="color:white;" href="${pageContext.request.contextPath}">Home</a>--%>
             - <a style="color:white;" href="${pageContext.request.contextPath}/homework5/login.jsp">Login</a>
             - <a style="color:white;" href="${pageContext.request.contextPath}/productList">Product</a>
             - <a style="color:white;" href="#">FAQ</a>

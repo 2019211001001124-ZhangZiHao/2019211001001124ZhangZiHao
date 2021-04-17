@@ -34,7 +34,7 @@
     <jsp:include page="/homework5/header.jsp"/>
     <div id="main">
         <div style="float: left;width: calc(50% - 120px);height: 20%"></div>
-        <form method="post" action="${pageContext.request.contextPath}/ToMyDb" >
+        <form method="post" action="${pageContext.request.contextPath}/register" >
             <div id="name">
                 <pre>Name:     </pre>
                 <input name="name" type="text" required placeholder="No more than 30s" pattern=".{0,30}"/>
