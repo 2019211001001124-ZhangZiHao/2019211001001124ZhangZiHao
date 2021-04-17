@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-<jsp:include page="/homework5/header.jsp"/>
+<jsp:include page="/WEB-INF/views/header.jsp"/>
 
         <br/>
 
@@ -27,14 +27,6 @@
             <li>
                 <a href="config">To Config(U-_-U)</a>
             </li>
-
-            <li>
-                <a href="./homework5/MyJsp.jsp">To MyJsp(U-_-U)</a>
-            </li>
-
-            <li>
-                <a href="./homework5/login.jsp">To login(U-_-U)</a>
-            </li>
         </ul>
 
-<jsp:include page="/homework5/footer.jsp"/>
+<jsp:include page="/WEB-INF/views/footer.jsp"/>

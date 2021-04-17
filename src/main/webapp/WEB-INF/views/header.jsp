@@ -10,7 +10,7 @@
                             padding:0px;
                             margin:0px;" valign="bottom">
 
-            <img src="${pageContext.request.contextPath}/WEB-INF/views/logo.jpg" align="left">
+            <img src="${pageContext.request.contextPath}/homework5/logo.jpg" align="left">
         </td>
     </tr>
     <tr>
@@ -22,10 +22,10 @@
                             border-color:black;" align="center">
             <a style="color:white;" href="${pageContext.request.contextPath}/Home">Home</a>
 <%--            <a style="color:white;" href="${pageContext.request.contextPath}">Home</a>--%>
-            - <a style="color:white;" href="${pageContext.request.contextPath}/WEB-INF/views/login.jsp">Login</a>
+            - <a style="color:white;" href="${pageContext.request.contextPath}/LoginServlet">Login</a>
             - <a style="color:white;" href="${pageContext.request.contextPath}/productList">Product</a>
             - <a style="color:white;" href="#">FAQ</a>
-            - <a style="color:white;" href="#">About</a>
+            - <a style="color:white;" href="${pageContext.request.contextPath}/config">About</a>
 
         </td>
     </tr>
@@ -35,7 +35,7 @@
     <tr height="20"><td align="right">
         <br> <a href="#">Logout</a>
         <br><a href="#">My Cart</a><br/>
-        <a href="${pageContext.request.contextPath}/WEB-INF/views/register.jsp">Register Here</a>
+        <a href="${pageContext.request.contextPath}/register">Register Here</a>
     </td></tr>
 </table>
 <br/>
