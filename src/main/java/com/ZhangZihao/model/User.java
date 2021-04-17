@@ -1,19 +1,19 @@
-package com.ZhangZihao.homework.week4.table;
+package com.ZhangZihao.model;
 
-import com.ZhangZihao.homework.week4.acti.toSQLs;
+import com.ZhangZihao.week4.acti.toSQLs;
 
 import java.sql.Date;
 
-public class usertable {
+public class User {
 
-    String  ID          = null;
+    int     ID          = 0;
     String  UserName    = null;
     String  Password    = null;
     String  Email       = null;
     String  Gender      = null;
     Date    Birthdate   = null;
 
-    public usertable(String ID, String UserName, String password, String email, String Gender, String Birthdate){
+    public User(int ID, String UserName, String password, String email, String Gender, String Birthdate){
         this.ID = ID;
         this.UserName = UserName;
         this.Password = password;
@@ -21,36 +21,63 @@ public class usertable {
         this.Gender = Gender;
         this.Birthdate = Date.valueOf(Birthdate);
     }
-    public usertable(String UserName, String password, String email, String Gender, String Birthdate){
+    public User(String UserName, String password, String email, String Gender, String Birthdate){
         this.UserName = UserName;
         this.Password = password;
         this.Email = email;
         this.Gender = Gender;
         this.Birthdate = Date.valueOf(Birthdate);
     }
-    public usertable(String UserName, String password, String Gender){
+    public User(String UserName, String password, String Gender){
         this.UserName = UserName;
         this.Password = password;
         this.Gender = Gender;
     }
-    public usertable(String UserName,String password){
+    public User(String UserName, String password){
 
         this.UserName = UserName;
         this.Password = password;
     }
-    public usertable(String ID){
+    public User(int ID){
         this.ID = ID;
     }
-    public usertable(){}
+    public User(){}
 
     @Override
     public String toString(){
-        return ID+"    "+UserName+"    "+ Password +"    "+Gender+"    "+Birthdate;
+        return "User{"                              +
+                "id=" +             ID              +
+                ", UserName=" +     getUserName()   +
+                ", Password=" +     getPassword()   +
+                ", Email=" +        getEmail()      +
+                ", Gender=" +       getGender()     +
+                ", Birthdate=" +    getBirthdate()  +
+                "};";
     }
 //--------------------
-    public String getID() {
-        return toSQLs.SQLs(ID);
+public int getID() {
+    return ID;
+}
+    public String getUserName() {
+        return UserName;
     }
+    public String getPassword() {
+        return Password;
+    }
+    public String getEmail() {
+        return Email;
+    }
+    public String getGender() {
+        return Gender;
+    }
+    public String getBirthdate() {
+        if(Birthdate==null)
+            return null;
+        return Birthdate.toString();
+    }
+/*public int getID() {
+    return ID;
+}
     public String getUserName() {
         return toSQLs.SQLs(UserName);
     }
@@ -67,9 +94,9 @@ public class usertable {
         if(Birthdate==null)
             return null;
         return toSQLs.SQLs(Birthdate.toString());
-    }
+    }*/
 //-----------------
-    public void setID(String ID) {
+    public void setID(int ID) {
         this.ID = ID;
     }
     public void setUserName(String userName) {

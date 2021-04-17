@@ -5,7 +5,7 @@
 <jsp:include page="/homework5/header.jsp"/>
 
         <br/>
-
+        <h1>Welcome!</h1>
         <form method="get" action="${pageContext.request.contextPath}/SearchServlet" target="_top">
             <input name="search" type="text"/>
             <select name="way">

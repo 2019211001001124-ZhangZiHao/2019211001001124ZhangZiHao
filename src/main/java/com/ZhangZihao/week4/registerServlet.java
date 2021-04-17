@@ -1,22 +1,24 @@
-package com.ZhangZihao.homework.week4;
+package com.ZhangZihao.week4;
 
-import com.ZhangZihao.homework.week4.acti.UserTableInsert;
-import com.ZhangZihao.homework.week4.acti.UserTableSelect;
-import com.ZhangZihao.homework.week4.conn.Conn;
-import com.ZhangZihao.homework.week4.table.usertable;
+import com.ZhangZihao.dao.UserDao;
+//import com.ZhangZihao.dao.UserTableInsert;
+//import com.ZhangZihao.dao.UserTableSelect;
+import com.ZhangZihao.week4.conn.Conn;
+import com.ZhangZihao.model.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.SQLException;
 
 import javax.servlet.annotation.*;
 
 @WebServlet(
-        name = "ServletR",
-        value = "/ToMyDb",
+        name = "Servlet",
+        value = "/register",
 //        urlPatterns = "/ToMyDb",
         initParams = {
                 @WebInitParam(
@@ -36,8 +38,9 @@ import javax.servlet.annotation.*;
 public class registerServlet extends HttpServlet {
 
     Conn con;
-    UserTableInsert insertWay;
-    UserTableSelect selectWay;
+//    UserTableInsert insertWay;
+//    UserTableSelect selectWay;
+    UserDao DAO=new UserDao();
 
     String name;
     String password;
@@ -48,9 +51,11 @@ public class registerServlet extends HttpServlet {
     @Override
     public void init() throws ServletException{
         super.init();
-        con=(Conn) getServletContext().getAttribute("con");
-        selectWay=(UserTableSelect) getServletContext().getAttribute("selectWay");
-        insertWay=(UserTableInsert) getServletContext().getAttribute("insertWay");
+        Object x=getServletContext().getAttribute("con");
+        con = (Conn) x;
+//        con=(Conn) getServletContext().getAttribute("con");
+//        selectWay=(UserTableSelect) getServletContext().getAttribute("selectWay");
+//        insertWay=(UserTableInsert) getServletContext().getAttribute("insertWay");
 
     }
 
@@ -67,12 +72,17 @@ public class registerServlet extends HttpServlet {
         email =      request.getParameter("email");
         Gender =        request.getParameter("sex");
         birthday =   request.getParameter("birthday");
-        usertable tableI = new usertable(name,password,email,Gender,birthday);
-        insertWay.doInsert(tableI);
+        User tableI = new User(name,password,email,Gender,birthday);
+        try {
+            DAO.saveUser(con,tableI);
+        }catch (SQLException E){
+            E.printStackTrace();
+        }
+//        insertWay.doInsert(tableI);
 
         response.sendRedirect("./homework5/login.jsp");
 
-        /*usertable tableS = new usertable();
+        /*User tableS = new User();
         tableS.setUserName(name);
         tableS.setPassword(password);
         selectWay.SelectInDb(tableS);
