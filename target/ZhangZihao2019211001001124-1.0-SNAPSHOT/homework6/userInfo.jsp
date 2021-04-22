@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.ZhangZihao.model.User" %><%--
   Created by IntelliJ IDEA.
   User: 小张
   Date: 2021/4/9
@@ -9,30 +9,37 @@
 <html>
 <head>
     <jsp:include page="/homework5/header.jsp"/>
+    <%User user = (User) request.getAttribute("user"); %>
     <table frame="box" rules="all">
         <tr>
-            <th>ID</th>
-            <td><%= request.getAttribute("ID") %></td>
+            <th>IDx</th>
+            <td><%= user.getID() %></td>
+<%--            <td><%= request.getAttribute("ID") %></td>--%>
         </tr>
         <tr>
             <th>UserName</th>
-            <td><%= request.getAttribute("UserName") %></td>
+            <td><%= user.getUserName() %></td>
+<%--            <td><%= request.getAttribute("UserName") %></td>--%>
         </tr>
         <tr>
             <th>Password</th>
-            <td><%= request.getAttribute("Password") %></td>
+            <td><%= user.getPassword() %></td>
+<%--            <td><%= request.getAttribute("Password") %></td>--%>
         </tr>
         <tr>
             <th>Email</th>
-            <td><%= request.getAttribute("Email") %></td>
+            <td><%= user.getEmail() %></td>
+<%--            <td><%= request.getAttribute("Email") %></td>--%>
         </tr>
         <tr>
             <th>Gender</th>
-            <td><%= request.getAttribute("Gender") %></td>
+            <td><%= user.getGender() %></td>
+<%--            <td><%= request.getAttribute("Gender") %></td>--%>
         </tr>
         <tr>
             <th>Birthdate</th>
-            <td><%= request.getAttribute("Birthdate") %></td>
+            <td><%= user.getBirthdate() %></td>
+<%--            <td><%= request.getAttribute("Birthdate") %></td>--%>
         </tr>
     </table>
     <jsp:include page="/homework5/footer.jsp"/>
