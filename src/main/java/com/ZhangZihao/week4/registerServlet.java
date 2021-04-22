@@ -80,7 +80,7 @@ public class registerServlet extends HttpServlet {
         }
 //        insertWay.doInsert(tableI);
 
-        response.sendRedirect("./homework5/login.jsp");
+        response.sendRedirect("LoginServlet");
 
         /*User tableS = new User();
         tableS.setUserName(name);
