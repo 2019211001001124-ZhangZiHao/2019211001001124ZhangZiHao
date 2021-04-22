@@ -60,12 +60,13 @@ public class LoginServlet extends HttpServlet {
             /*out.println("Login Success!!!"+"<br/>"+
                     "Welcome!!!"+"<br/>"+
                     "ID"+table.getID()+':'+table.getUserName());*/
-            request.setAttribute("ID",table.getID());
+            request.setAttribute("user",table);
+/*            request.setAttribute("ID",table.getID());
             request.setAttribute("UserName",table.getUserName());
             request.setAttribute("Password",table.getPassword());
             request.setAttribute("Email",table.getEmail());
             request.setAttribute("Gender",table.getGender());
-            request.setAttribute("Birthdate",table.getBirthdate());
+            request.setAttribute("Birthdate",table.getBirthdate());*/
 
             request.getRequestDispatcher("./WEB-INF/views/userInfo.jsp").forward(request,response);
         }

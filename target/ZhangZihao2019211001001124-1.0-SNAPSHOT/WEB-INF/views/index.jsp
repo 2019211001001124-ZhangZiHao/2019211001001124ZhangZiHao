@@ -23,10 +23,6 @@
             <li>
                 <a href="homework3/ServletLifeCycle">To LifeCycle(U-_-U)</a>
             </li>
-
-            <li>
-                <a href="config">To Config(U-_-U)</a>
-            </li>
         </ul>
 
 <jsp:include page="/WEB-INF/views/footer.jsp"/>
