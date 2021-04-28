@@ -48,9 +48,9 @@ public class UpDateUserServlet extends HttpServlet {
         }catch (SQLException E){
             E.printStackTrace();
         }
-        request.getRequestDispatcher("./WEB-INF/views/userInfo.jsp").forward(request,response);
         HttpSession session = request.getSession(false);
         assert session!=null;
         session.setAttribute("user",newUser);
+        request.getRequestDispatcher("./WEB-INF/views/userInfo.jsp").forward(request,response);
     }
 }
