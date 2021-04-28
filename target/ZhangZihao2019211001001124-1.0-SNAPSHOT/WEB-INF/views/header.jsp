@@ -1,3 +1,4 @@
+<%@ page import="com.ZhangZihao.model.User" %>
 <title>My Online APP</title>
 </head>
 <body style="margin:0px;padding:0px;font-family:helvetica;">
@@ -23,17 +24,42 @@
             <a style="color:white;" href="${pageContext.request.contextPath}/Home">Home</a>
 <%--            <a style="color:white;" href="${pageContext.request.contextPath}">Home</a>--%>
             - <a style="color:white;" href="${pageContext.request.contextPath}/LoginServlet">Login</a>
-            - <a style="color:white;" href="${pageContext.request.contextPath}/productList">Product</a>
-            - <a style="color:white;" href="#">FAQ</a>
+            - <a style="color:white;" href="${pageContext.request.contextPath}/#">Product</a>
+            - <a style="color:white;" href="${pageContext.request.contextPath}/#">FAQ</a>
             - <a style="color:white;" href="${pageContext.request.contextPath}/config">About</a>
 
         </td>
     </tr>
     <tr height="25"><td align="right"><font size="18" color="blue">
-        Welcome,<font size="18" color="red"> Guest</font>
+        Welcome,
+    <%
+        User user;
+        if( (user=(User) session.getAttribute("user"))!=null)
+        {
+            out.println(
+                    "<span style=\"color: red; \">"+
+                    user.getUserName()+
+                    "</span>"
+            );
+        }
+        else {
+            out.println(
+                    "<span style=\"color: red; \">"+
+                            "Guest"+
+                            "</span>"
+            );
+        }
+    %>
     </font></td> </tr>
     <tr height="20"><td align="right">
-        <br> <a href="#">Logout</a>
+        <%
+            if(session.getAttribute("user")!=null)
+            {
+        %>
+            <br/><a href="${pageContext.request.contextPath}/LogOut">Logout</a>
+        <%
+            }
+        %>
         <br><a href="#">My Cart</a><br/>
         <a href="${pageContext.request.contextPath}/register">Register Here</a>
     </td></tr>

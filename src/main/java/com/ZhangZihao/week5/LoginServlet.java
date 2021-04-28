@@ -57,16 +57,28 @@ public class LoginServlet extends HttpServlet {
         out.println("<h1>");*/
         if(table!=null)//selectWay.fillTable(table)
         {
-            /*out.println("Login Success!!!"+"<br/>"+
-                    "Welcome!!!"+"<br/>"+
-                    "ID"+table.getID()+':'+table.getUserName());*/
-            request.setAttribute("user",table);
-/*            request.setAttribute("ID",table.getID());
-            request.setAttribute("UserName",table.getUserName());
-            request.setAttribute("Password",table.getPassword());
-            request.setAttribute("Email",table.getEmail());
-            request.setAttribute("Gender",table.getGender());
-            request.setAttribute("Birthdate",table.getBirthdate());*/
+
+//            request.setAttribute("user",table);
+            String RM = request.getParameter("RM");
+            if(RM!=null && RM.equals("checked"))
+            {
+                Cookie cUserName = new Cookie("cUserName",table.getUserName());
+                Cookie cPassword = new Cookie("cPassword",table.getPassword());
+                Cookie cRM = new Cookie("cRM",RM);
+
+                cUserName.setMaxAge(60*2);
+                cPassword.setMaxAge(60*2);
+                cRM.setMaxAge(60*2);
+
+                response.addCookie(cUserName);
+                response.addCookie(cPassword);
+                response.addCookie(cRM);
+            }
+
+            HttpSession session = request.getSession();
+            session.setMaxInactiveInterval(60*2);
+            session.setAttribute("user",table);
+            System.out.println("LMS:"+session.getId());
 
             request.getRequestDispatcher("./WEB-INF/views/userInfo.jsp").forward(request,response);
         }
