@@ -55,13 +55,15 @@ public class UserDao implements IUserDao{
                 "DELETE FROM [usertable]" +
                 "WHERE " +
                 "ID > 0  AND " +
+                "ID = ? AND " +
                 "UserName = ?  AND " +
                 "Password = ? ;";
 
         try {
             pst=con.getConn().prepareStatement(SQLs);
-            pst.setString(1,user.getUserName());
-            pst.setString(2,user.getPassword());
+            pst.setInt(1,user.getID());
+            pst.setString(2,user.getUserName());
+            pst.setString(3,user.getPassword());
             if(pst.execute())
                 return true;
         } catch (SQLException E) {
@@ -82,6 +84,7 @@ public class UserDao implements IUserDao{
                 "Birthdate = ? "+
                 "WHERE " +
                 "ID > 0  AND " +
+                "ID = ? AND " +
                 "UserName = ?  AND " +
                 "Password = ? ;";
 
@@ -93,8 +96,9 @@ public class UserDao implements IUserDao{
             pst.setString(4,user.getGender());
             pst.setString(5,user.getBirthdate());
 
-            pst.setString(6,user.getUserName());
-            pst.setString(7,user.getPassword());
+            pst.setInt(6,user.getID());
+            pst.setString(7,user.getUserName());
+            pst.setString(8,user.getPassword());
             if(pst.execute())
                 return true;
         } catch (SQLException E) {

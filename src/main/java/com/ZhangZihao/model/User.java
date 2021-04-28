@@ -59,21 +59,21 @@ public int getID() {
     return ID;
 }
     public String getUserName() {
-        return UserName;
+        return UserName.trim();
     }
     public String getPassword() {
-        return Password;
+        return Password.trim();
     }
     public String getEmail() {
-        return Email;
+        return Email.trim();
     }
     public String getGender() {
-        return Gender;
+        return Gender.trim();
     }
     public String getBirthdate() {
         if(Birthdate==null)
             return null;
-        return Birthdate.toString();
+        return Birthdate.toString().trim();
     }
 /*public int getID() {
     return ID;
