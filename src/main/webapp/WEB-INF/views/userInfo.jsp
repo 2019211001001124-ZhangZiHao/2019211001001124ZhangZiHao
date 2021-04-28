@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<% User user = (User) request.getAttribute("user"); %>
+<% User user = (User) session.getAttribute("user"); %>
 
 <html>
 <head>
@@ -44,4 +44,5 @@
                 <%--            <td><%= request.getAttribute("Birthdate") %></td>--%>
             </tr>
         </table>
+        <a href="${pageContext.request.contextPath}/UpDateUser">Change Now</a>
     <jsp:include page="/WEB-INF/views/footer.jsp"/>
