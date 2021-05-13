@@ -1,88 +1,50 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 小张
-  Date: 2021/4/7
-  Time: 17:15
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <style>
-        pre{
-            display: inline;
-            font-family: Consolas, serif;
-        }
-        div{
-            font-family: Consolas, serif;
-        }
-        form{
-            padding: 6px;
-            line-height:25px
-        }
-        #submit{
-            position: relative;
-            left: 70px;
-        }
-        input{
-            width: 194px;
-        }
-        input.nom{
-            width: auto;
-        }
-    </style>
-    <jsp:include page="/WEB-INF/views/header.jsp"/>
-    <h2>Login</h2>
-    <hr>
-    <% if(session.getAttribute("user")!=null)
-        {
-            out.println("<h2>"+"You've logged in already"+"</h2>");
-        }
-    %>
+<%@include file="header.jsp"%>
+<section id="form"><!--form-->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4 col-sm-offset-1">
+					<div class="login-form"><!--login form-->
+					<h2>Login to your account</h2>	<%
+    if(!(request.getAttribute("message")==null)){
+    out.println("<h2>"+request.getAttribute("message")+"</h2>");
+}%>
 <%
-    Object message;
-    if ( (message=request.getAttribute("message")) != null )
-    {
-        out.println("<h3>"+message+"</h3>");
-    }
-%>
-    <%
-        Cookie[] allCookie = request.getCookies();
-        String UserName,Password,RM;
-        UserName=Password=RM="";
-        for(Cookie c:allCookie)
-            {
-                if(c.getName().equals("cUserName"))
-                    {
-                        UserName = c.getValue();
-                    }
-                if(c.getName().equals("cPassword"))
-                    {
-                        Password = c.getValue();
-                    }
-                if(c.getName().equals("cRM"))
-                    {
-                        RM = c.getValue();
-                    }
+    Cookie[] cookies=request.getCookies();
+    String username="";
+    String password="";
+    String rememberMe="";
+    if (cookies!=null){
+        for (Cookie cookie:cookies){
+            if (cookie.getName().equals("cUserName")){
+                username=cookie.getValue();
             }
-    %>
-    <div id="main">
-        <div style="float: left;width: calc(50% - 120px);height: 15%"></div>
-        <form method="post" action="${pageContext.request.contextPath}/LoginServlet" >
-            <div id="name">
-                <pre>Name:     </pre>
-                <input name="name" type="text" required placeholder="No more than 30" pattern=".{0,30}" value="<%=UserName%>" />
-            </div>
-            <div id="password">
-                <pre>password: </pre>
-                <input name="password" type="password" required placeholder="No less than 8 , No more than 30" pattern=".{8,30}" value="<%=Password%>" />
-            </div>
-            <div id="RM">
-                <input name="RM" type="checkbox" value="checked" <%=(RM.equals("checked") ? "checked":"")%>  />pls remember me
-            </div>
-            <div id="submit">
-                <input type="submit" value="login now!"/>
-            </div>
-        </form>
-    </div>
-    <jsp:include page="/WEB-INF/views/footer.jsp"/>
+            if (cookie.getName().equals("cPassword")){
+                password=cookie.getValue();
+            }
+            if (cookie.getName().equals("cRM")){
+                rememberMe=cookie.getValue();
+            }
+        }
+    }
+    //update 5 user basepath
+%>
+
+<form method="post" action="<%=basePath+"login"%>">
+    <input type="text" name="username" placeholder="Username" value="<%=username%>"><br>
+   <input type="password" name="password" placeholder="password" value="<%=password%>">
+    <br/>
+    <span>
+		<input type="checkbox" class="checkbox" name="remember" value="1" <%="1".equals(rememberMe)? "checked":""%>/> Keep me signed in
+   </span>
+    <button type="submit" class="btn btn-default">Login</button>
+</form>	
+					</div><!--/login form-->
+				</div>
+				
+				
+			</div>
+		</div>
+	</section><!--/form-->
+<%@include file="footer.jsp"%>

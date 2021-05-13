@@ -1,7 +1,7 @@
 //Obsolete class
 package com.ZhangZihao.dao;
 
-import com.ZhangZihao.week4.conn.Conn;
+import com.ZhangZihao.model.Conn;
 import com.ZhangZihao.model.User;
 
 import java.io.PrintWriter;

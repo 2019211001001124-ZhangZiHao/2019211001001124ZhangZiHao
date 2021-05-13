@@ -1,10 +1,8 @@
 package com.ZhangZihao.dao;
 
 import com.ZhangZihao.model.User;
-import com.ZhangZihao.week4.acti.toSQLs;
-import com.ZhangZihao.week4.conn.Conn;
+import com.ZhangZihao.model.Conn;
 
-import javax.naming.spi.DirStateFactory;
 import java.sql.*;
 import java.sql.Date;
 import java.util.List;

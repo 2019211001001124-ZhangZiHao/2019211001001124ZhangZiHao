@@ -1,7 +1,5 @@
 package com.ZhangZihao.model;
 
-import com.ZhangZihao.week4.acti.toSQLs;
-
 import java.sql.Date;
 
 public class User {

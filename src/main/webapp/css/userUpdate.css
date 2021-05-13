@@ -1,0 +1,21 @@
+#update pre{
+    display: inline;
+    font-family: Consolas;
+}
+#update div{
+    font-family: Consolas;
+}
+#update form{
+    padding: 6px;
+    line-height:25px
+}
+#update #submit{
+    position: relative;
+    left: 70px;
+}
+#update input{
+    width: 194px;
+}
+#update input.nom{
+    width: auto;
+}

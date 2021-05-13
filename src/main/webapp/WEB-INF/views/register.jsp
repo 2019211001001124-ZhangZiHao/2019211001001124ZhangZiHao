@@ -1,64 +1,66 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 小张
-  Date: 2021/3/15
-  Time: 9:33
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <style>
-        pre{
-            display: inline;
-            font-family: Consolas;
+<%@include file="header.jsp"%>
+<section id="form"><!--form-->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4 col-sm-offset-1">
+					<div class="login-form"><!--login form-->
+						<h2>Login to your account</h2><%
+    if(!(request.getAttribute("message")==null)){
+    out.println("<h3>"+request.getAttribute("message")+"</h3>");
+}%>
+<%
+    Cookie[] cookies=request.getCookies();
+    String username="";
+    String password="";
+    String rememberMe="";
+    if (cookies!=null){
+        for (Cookie cookie:cookies){
+            if (cookie.getName().equals("cUserName")){
+                username=cookie.getValue();
+            }
+            if (cookie.getName().equals("cPassword")){
+                password=cookie.getValue();
+            }
+            if (cookie.getName().equals("cRM")){
+                rememberMe=cookie.getValue();
+            }
         }
-        div{
-            font-family: Consolas;
-        }
-        form{
-            padding: 6px;
-            line-height:25px
-        }
-        #submit{
-            position: relative;
-            left: 70px;
-        }
-        input{
-            width: 194px;
-        }
-        input.nom{
-            width: auto;
-        }
-    </style>
-    <jsp:include page="/WEB-INF/views/header.jsp"/>
-    <div id="main">
-        <div style="float: left;width: calc(50% - 120px);height: 20%"></div>
-        <form method="post" action="${pageContext.request.contextPath}/register" >
-            <div id="name">
-                <pre>Name:     </pre>
-                <input name="name" type="text" required placeholder="No more than 30s" pattern=".{0,30}"/>
-            </div>
-            <div id="password">
-                <pre>password: </pre>
-                <input name="password" type="password" required placeholder="No less than 8 , No more than 30" pattern=".{8,16}"/>
-            </div>
-            <div id="email">
-                <pre>email:    </pre>
-                <input name="email" type="text" required placeholder="QQmail/foxmail/Gmail..." pattern=".{1,}@.{1,}"/>
-            </div>
-            <div id="sex">
-                Boy:      <input name="sex" class="nom" type="radio" value="boy" checked/>
-                &ensp; 	&ensp; 	&ensp; 	&ensp;
-                Girl:     <input name="sex" class="nom" type="radio" value="girl"/>
-            </div>
-            <div id="Date">
-                <pre>Birthday: </pre>
-                <input name="birthday" type="text" required placeholder="yyyy-dd-mm" pattern="\d{4}-((0[1-9])|(1\d)|(2\d)|(3[0-1]))-((0[1-9])|(1[0-2]))"/>
-            </div>
-            <div id="submit">
-                <input type="submit" value="register now!"/>
-            </div>
-        </form>
-    </div>
-    <jsp:include page="/WEB-INF/views/footer.jsp"/>
+    }
+    //update 5 user basepath
+%>
+<form method="post" action="<%=basePath+"login"%>">
+    <input type="text" name="name" placeholder="Username" value="<%=username%>"><br>
+   <input type="password" name="password" placeholder="password" value="<%=password%>">
+    <br/>
+    <span>
+		<input type="checkbox" class="checkbox" name="remember" value="1" <%="1".equals(rememberMe)? "checked":""%>/> Keep me signed in
+   </span>
+    <button type="submit" class="btn btn-default">Login</button>
+</form>	
+					</div><!--/login form-->
+				</div>
+				<div class="col-sm-1">
+					<h2 class="or">OR</h2>
+				</div>
+				<div class="col-sm-4">
+					<div class="signup-form"><!--sign up form-->
+						<h2>New User Registration!</h2>
+						
+<%if(!(request.getAttribute("message")==null)){
+    out.println("<h3>"+request.getAttribute("message")+"</h3>");
+}%>
+<form method="post" action="register">
+    <input type="text" name="name" placeholder="Username" />  <input type="password" name="password" placeholder="password" />   <input type="text" name="email" placeholder="Email">
+ <label> Gender </label><span> &nbsp;<input type="radio" 
+style="width: 15px; height: 15px; display:inline;" name="sex" value="male" checked/>&nbsp;Male&nbsp;<input type="radio" style="width: 15px; height: 15px;   display: inline;" name="gender" value="female"/>&nbsp;Female</span>
+   <span></span>
+   <input type="text" name="birthday" placeholder="Date of Birth (yyyy-mm-dd)">
+    <button type="submit" class="btn btn-default">Register</button>
+</form>
+					</div><!--/sign up form-->
+				</div>
+			</div>
+		</div>
+	</section><!--/form-->
+<%@include file="footer.jsp"%>

@@ -1,7 +1,5 @@
 
-import com.ZhangZihao.dao.UserDao;
-import com.ZhangZihao.week4.conn.Conn;
-import com.ZhangZihao.model.User;
+import com.ZhangZihao.model.Conn;
 
 public class test {
     public static void main(String[] args){

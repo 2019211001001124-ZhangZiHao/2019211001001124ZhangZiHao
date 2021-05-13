@@ -1,9 +1,8 @@
 package com.ZhangZihao.dao;
 
 import com.ZhangZihao.model.User;
-import com.ZhangZihao.week4.conn.Conn;
+import com.ZhangZihao.model.Conn;
 
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Date;
 import java.util.List;
