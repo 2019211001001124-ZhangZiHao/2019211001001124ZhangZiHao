@@ -35,7 +35,7 @@
             width: auto;
         }
     </style>
-    <jsp:include page="/WEB-INF/views/old_ver/header.jspader.jsp"/>
+    <jsp:include page="/WEB-INF/views/old_ver/header.jsp"/>
         <div id="update">
             <div style="float: left;width: calc(50% - 120px);height: 20%"></div>
             <form method="post" action="${pageContext.request.contextPath}/UpDateUser" >
@@ -67,4 +67,4 @@
             </form>
         </div>
 
-    <jsp:include page="/WEB-INF/views/old_ver/footer.jspoter.jsp"/>
+    <jsp:include page="/WEB-INF/views/old_ver/footer.jsp"/>

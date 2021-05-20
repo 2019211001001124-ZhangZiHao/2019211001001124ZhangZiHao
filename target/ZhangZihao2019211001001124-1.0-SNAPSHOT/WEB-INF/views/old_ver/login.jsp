@@ -31,7 +31,7 @@
             width: auto;
         }
     </style>
-    <jsp:include page="/WEB-INF/views/old_ver/header.jspader.jsp"/>
+    <jsp:include page="/WEB-INF/views/old_ver/header.jsp"/>
     <h2>Login</h2>
     <hr>
     <% if(session.getAttribute("user")!=null)
@@ -85,4 +85,4 @@
             </div>
         </form>
     </div>
-    <jsp:include page="/WEB-INF/views/old_ver/footer.jspoter.jsp"/>
+    <jsp:include page="/WEB-INF/views/old_ver/footer.jsp"/>

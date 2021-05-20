@@ -25,4 +25,4 @@
             </li>
         </ul>
 
-<jsp:include page="/WEB-INF/views/old_ver/footer.jspoter.jsp"/>
+<jsp:include page="/WEB-INF/views/old_ver/footer.jsp"/>

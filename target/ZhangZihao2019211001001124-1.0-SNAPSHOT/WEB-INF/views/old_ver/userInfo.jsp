@@ -11,7 +11,7 @@
 
 <html>
 <head>
-    <jsp:include page="/WEB-INF/views/old_ver/header.jspader.jsp"/>
+    <jsp:include page="/WEB-INF/views/old_ver/header.jsp"/>
         <table frame="box" rules="all">
             <tr>
                 <th>ID</th>
@@ -45,4 +45,4 @@
             </tr>
         </table>
         <a href="${pageContext.request.contextPath}/UpDateUser">Change Now</a>
-    <jsp:include page="/WEB-INF/views/old_ver/footer.jspoter.jsp"/>
+    <jsp:include page="/WEB-INF/views/old_ver/footer.jsp"/>
