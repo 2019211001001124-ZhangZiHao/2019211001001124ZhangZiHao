@@ -30,8 +30,14 @@
 				               	<select name="categoryId">
 										<option >-- Category --</option>
 											<!-- loop_start -->
-											
-										<option value=""></option>
+
+									<option value="1">one</option>
+									<option value="2">two</option>
+									<option value="3">three</option>
+									<option value="4">four</option>
+									<option value="5">five</option>
+									<option value="6">six</option>
+									<option value="7">seven</option>
 										
 										<!-- loop_end -->
 										
@@ -42,7 +48,7 @@
 				            </div>
 				         
 				            <div class="form-group col-md-12">
-				                <textarea name="productDescription" id="message"  class="form-control" cols="8" rows="8" placeholder="Product Description Here"></textarea>
+				                <textarea name="productDes" id="message"  class="form-control" cols="8" rows="8" placeholder="Product Description Here"></textarea>
 				            </div>                        
 				            <div class="form-group col-md-12">
 				                <input type="submit" name="submit" class="btn btn-primary pull-right" value="Submit">
