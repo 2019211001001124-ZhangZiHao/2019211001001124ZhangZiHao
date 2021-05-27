@@ -25,7 +25,6 @@ public class ProductDao implements  IProductDao{
         rs=null;
         tempProduct=new Product();
         tempProductList= new LinkedList<>();
-        System.out.println(tempProductList);
     }
 
     @Override
@@ -108,7 +107,6 @@ public class ProductDao implements  IProductDao{
         pst.setInt(1,productId);
         rs= pst.executeQuery();
 
-        tempProduct=null;
         if (rs.next())
             getAllInfo(rs);
 
@@ -129,11 +127,11 @@ public class ProductDao implements  IProductDao{
         pst.setInt(1,categoryId);
         rs= pst.executeQuery();
 
-        tempProduct=null;
         tempProductList.clear();
         while (rs.next()){
             getAllInfo(rs);
             tempProductList.add(tempProduct);
+            tempProduct=new Product();
         }
 
         if(tempProductList.isEmpty())
@@ -162,6 +160,7 @@ public class ProductDao implements  IProductDao{
         while (rs.next()){
             getAllInfo(rs);
             tempProductList.add(tempProduct);
+            tempProduct=new Product();
         }
 
         if(tempProductList.isEmpty())
@@ -179,11 +178,11 @@ public class ProductDao implements  IProductDao{
         st= con.getStatement();
         rs= st.executeQuery(SQLs);
 
-        tempProduct=null;
         tempProductList.clear();
         while (rs.next()){
             getAllInfo(rs);
             tempProductList.add(tempProduct);
+            tempProduct=new Product();
         }
 
         if(tempProductList.isEmpty())
@@ -205,7 +204,6 @@ public class ProductDao implements  IProductDao{
         pst.setString(1,productName);
         rs= pst.executeQuery();
 
-        tempProduct=null;
         tempProductList.clear();
         while (rs.next()){
             getAllInfo(rs);
@@ -218,9 +216,23 @@ public class ProductDao implements  IProductDao{
     }
 
     @Override
-    public List<Product> getPicture(Integer productId, Conn con) throws SQLException {
-//        list?????
-        return null;
+    public InputStream getPicture(Integer productId, Conn con) throws SQLException {
+        SQLs = "" +
+                " SELECT * "             +
+                " FROM [Product] "       +
+                " WHERE " +
+                " ProductId = ? "   +
+                ";";
+        pst = con.getConn().prepareStatement(SQLs);
+
+        pst=con.getConn().prepareStatement(SQLs);
+        pst.setInt(1,productId);
+        rs= pst.executeQuery();
+
+        assert rs!=null;
+        rs.next();
+
+        return rs.getBlob("picture").getBinaryStream();
     }
 
     private void getAllInfo(ResultSet rs) throws SQLException{
@@ -231,4 +243,7 @@ public class ProductDao implements  IProductDao{
         tempProduct.setPrice(rs.getDouble("price"));
         tempProduct.setCategoryId(rs.getInt("CategoryId"));
     }
+
+
+
 }

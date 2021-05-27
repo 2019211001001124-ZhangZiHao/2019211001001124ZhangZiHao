@@ -5,6 +5,7 @@ import com.ZhangZihao.model.Conn;
 
 import java.sql.*;
 import java.sql.Date;
+import java.util.LinkedList;
 import java.util.List;
 
 public class UserDao implements IUserDao{
@@ -22,7 +23,7 @@ public class UserDao implements IUserDao{
         pst=null;
         rs=null;
         tempUser=new User();
-        tempUserList=null;
+        tempUserList=new LinkedList<>();
 
     }
 
@@ -169,6 +170,7 @@ public class UserDao implements IUserDao{
             while (rs.next()){
                 getAllInfo(rs);
                 tempUserList.add(tempUser);
+                tempUser=new User();
             }
             return tempUserList;
         } catch (SQLException E) {
@@ -194,6 +196,7 @@ public class UserDao implements IUserDao{
             while (rs.next()){
                 getAllInfo(rs);
                 tempUserList.add(tempUser);
+                tempUser=new User();
             }
             return tempUserList;
         } catch (SQLException E) {
@@ -219,6 +222,7 @@ public class UserDao implements IUserDao{
             while (rs.next()){
                 getAllInfo(rs);
                 tempUserList.add(tempUser);
+                tempUser=new User();
             }
             return tempUserList;
         } catch (SQLException E) {
@@ -244,6 +248,7 @@ public class UserDao implements IUserDao{
             while (rs.next()){
                 getAllInfo(rs);
                 tempUserList.add(tempUser);
+                tempUser=new User();
             }
             return tempUserList;
         } catch (SQLException E) {
@@ -269,6 +274,7 @@ public class UserDao implements IUserDao{
             while (rs.next()){
                 getAllInfo(rs);
                 tempUserList.add(tempUser);
+                tempUser=new User();
             }
             return tempUserList;
         } catch (SQLException E) {
@@ -291,6 +297,7 @@ public class UserDao implements IUserDao{
             while (rs.next()){
                 getAllInfo(rs);
                 tempUserList.add(tempUser);
+                tempUser=new User();
             }
             return tempUserList;
         } catch (SQLException E) {

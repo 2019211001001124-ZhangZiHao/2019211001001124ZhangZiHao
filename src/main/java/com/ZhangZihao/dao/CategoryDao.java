@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -26,7 +27,7 @@ public class CategoryDao {
         pst=null;
         rs=null;
         tempCategory=new Category();
-        tempCategoryList= new LinkedList<>();
+        tempCategoryList= new ArrayList<>();
     }
 
     public int save(Category category, Conn con) throws SQLException {
@@ -116,6 +117,7 @@ public class CategoryDao {
         while (rs.next()){
             getAllInfo(rs);
             tempCategoryList.add(tempCategory);
+            tempCategory=new Category();
         }
 
         if(tempCategoryList.isEmpty())

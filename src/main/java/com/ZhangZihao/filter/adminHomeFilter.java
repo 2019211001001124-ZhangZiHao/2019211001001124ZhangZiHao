@@ -42,8 +42,6 @@ public class adminHomeFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException {
 
-        System.out.println("LoginFilter doFilter");
-
         HttpServletRequest Hrequest = (HttpServletRequest) request;
         HttpServletResponse Hresponse= (HttpServletResponse) response;
 

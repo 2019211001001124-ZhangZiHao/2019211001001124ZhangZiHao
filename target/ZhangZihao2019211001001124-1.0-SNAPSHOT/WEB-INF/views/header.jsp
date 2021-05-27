@@ -42,11 +42,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<ul class="nav nav-pills">
 								<li><a href="#"><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
 								<li><a href="#"><i class="fa fa-envelope"></i> info@ecjtu.com</a></li>
-								<li><a href="#"><i class="fa fa-user"></i> Welcome,
-								<%if(session.getAttribute("user")!=null){
-								User user=(User)session.getAttribute("user");
-  									 out.print(user.getUserName());
-  									 }else{out.print("Guest");} %>
+								<li><a href="#"><i class="fa fa-user"></i> Welcome,${ empty sessionScope.user.userName ? "Guest":sessionScope.user.userName}
   									</a></li>
 							</ul>
 						</div>
