@@ -1,7 +1,7 @@
-<%@ page import="com.Lable1.Person" %>
+<%@ page import="com.Lab1.Person" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.List" %>
-<%@ page import="com.Lable1.Dog" %>
+<%@ page import="com.Lab1.Dog" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 

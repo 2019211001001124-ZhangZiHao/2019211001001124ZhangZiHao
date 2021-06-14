@@ -1,4 +1,4 @@
-package com.Lable1;
+package com.Lab1;
 
 public class Person {
     private String name;
